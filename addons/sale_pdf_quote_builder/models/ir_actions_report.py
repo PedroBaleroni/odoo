@@ -111,6 +111,7 @@ class IrActionsReport(models.Model):
             'delivery_date': format_datetime(env, order.commitment_date, tz=tz),
             'validity_date': format_date(env, order.validity_date, lang_code=lang_code),
             'client_order_ref': order.client_order_ref or '',
+            'module':order.module_id.name,
         }
 
         # Adding fields from each line, prefixed by the line_id to avoid conflicts

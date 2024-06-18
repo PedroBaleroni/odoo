@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="power_company_form_view" model="ir.ui.view">
+            <field name="name">power.company.view.form</field>
+            <field name="model">power.company</field>
+            <field name="arch" type="xml">
+                <form>
+                    <field name="name"/>
+                    <field name="kwh_price">
+                    <field name="tusd_price"/>
+                    <field name="taxes"/>
+                </form>
+            </field>
+        </record>
+        <record id="action_power_company_profile" model="ir.actions.act_window">
+            <field name="name">Companhias de Energia</field>
+            <field name="res_model">power.company</field>
+            <field name="view_type">tree,form</field>
+        </record>
+        <menuitem id="power_company_menu" name="Companhias de Enerdia"/>
+        <menuitem id="power_company_sub_menu" parent="power_company_menu"/>
+        <menuitemid="power_company_profile_menu" name="Perfil" action="action_power_company_profile" parent="power_company_sub_menu"/>
+</odoo>
